@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MinotaurBehavior : MonoBehaviour {
+public class MinotaurBehavior : MonoBehaviour
+{
     public string TargetTag = "Player";
     public float Speed = 15;
     public Minotaur MinotaurConfig;
@@ -12,7 +13,8 @@ public class MinotaurBehavior : MonoBehaviour {
     private Transform Target;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         Target = GameObject.FindGameObjectWithTag(TargetTag).transform;
 	}
 
@@ -22,7 +24,8 @@ public class MinotaurBehavior : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update ()
+    {
 		
 	}
 
