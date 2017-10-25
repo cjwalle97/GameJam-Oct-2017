@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour {
+public class PlayerControl : MonoBehaviour
+{  
 
-    public GameObject Player;
-    public Transform PlayerTransform;
-
+    public Player player;
 
 	void Start ()
     {
-		
+        player.health = 1;
+        player.keys = 0;
+        player.isDead = false;
 	}
 
     void Update ()
@@ -42,5 +43,17 @@ public class PlayerControl : MonoBehaviour {
             position.x += 0.25f;
             this.transform.position = position;
         }
+
+        //  Only here if we ever expand max health to go higher than 1
+        if (player.health == 0)
+        {
+            player.isDead = true;
+        }
+
+        if(player.isDead == true)
+        {
+            // Activate Game Over (UI overlay)
+        }
+
 	}
 }
