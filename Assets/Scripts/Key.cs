@@ -6,5 +6,5 @@ using UnityEngine;
 
 public class Key : ScriptableObject
 {
-    
+    public string HolderTag;
 }

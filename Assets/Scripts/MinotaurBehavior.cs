@@ -25,4 +25,12 @@ public class MinotaurBehavior : MonoBehaviour {
     void Update () {
 		
 	}
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.tag == TargetTag)
+    //    {
+
+    //    }
+    //}
 }
