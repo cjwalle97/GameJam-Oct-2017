@@ -5,14 +5,10 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {  
 
-    public Player player;
-    public MenuOptions menuInstance;
 
 	void Start ()
     {
-        player.health = 1;
-        player.keys = 0;
-        player.isDead = false;
+        
 	}
 
     void Update ()
@@ -43,18 +39,6 @@ public class PlayerControl : MonoBehaviour
             Vector3 position = this.transform.position;
             position.x += 0.25f;
             this.transform.position = position;
-        }
-
-        //  Only here if we ever expand max health to go higher than 1
-        if (player.health == 0)
-        {
-            player.isDead = true;
-        }
-
-        if(player.isDead == true)
-        {
-            Destroy(player);
-            menuInstance.PlayerCameraCanvas.SetActive(true);
         }
 
 	}
