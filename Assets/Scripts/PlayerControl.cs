@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
 
-
+    private Vector3 lastPos;
 
 	void Start ()
     {
-
+        lastPos = this.transform.position;
 	}
 
     void Update ()
@@ -23,6 +23,7 @@ public class PlayerControl : MonoBehaviour
             Vector3 position = this.transform.position;
             position.z += 0.25f;
             this.transform.position = position;
+            lastPos = this.transform.position;
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -30,6 +31,7 @@ public class PlayerControl : MonoBehaviour
             Vector3 position = this.transform.position;
             position.z -= 0.25f;
             this.transform.position = position;
+            lastPos = this.transform.position;
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -37,13 +39,20 @@ public class PlayerControl : MonoBehaviour
             Vector3 position = this.transform.position;
             position.x -= 0.25f;
             this.transform.position = position;
+            lastPos = this.transform.position;
         }
 
-        if(Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             Vector3 position = this.transform.position;
             position.x += 0.25f;
             this.transform.position = position;
+            lastPos = this.transform.position;
+        }
+
+        if (!Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.W))
+        {
+            this.transform.position = lastPos;
         }
 
 	}
