@@ -16,12 +16,5 @@ public class KeyBehavior : MonoBehaviour
 	void Update () {
 		
 	}
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == KeyConfig.HolderTag)
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 }

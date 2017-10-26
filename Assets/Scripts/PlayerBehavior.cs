@@ -8,9 +8,9 @@ public class PlayerBehavior : MonoBehaviour
     public Player player;
     public MenuOptions menuInstance;
 
-    private int playerHealth;
-    private int playerKeys;
-    private bool playerIsDead;
+    public int playerHealth;
+    public int playerKeys;
+    public bool playerIsDead;
 
     void Start ()
     {
