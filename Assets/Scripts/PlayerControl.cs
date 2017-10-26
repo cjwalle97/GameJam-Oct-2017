@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
-{  
+{
 
-    public Player player;
+    private Vector3 lastPos;
 
 	void Start ()
     {
-        player.health = 1;
-        player.keys = 0;
-        player.isDead = false;
+        lastPos = this.transform.position;
 	}
 
     void Update ()
     {
-		if (Input.GetKey(KeyCode.W))
+
+        this.transform.position = new Vector3(this.transform.position.x, 1.5f, this.transform.position.z);
+        this.transform.rotation = new Quaternion(0, 0, 0, 0);
+
+        if (Input.GetKey(KeyCode.W))
         {
             Vector3 position = this.transform.position;
             position.z += 0.25f;
             this.transform.position = position;
+            lastPos = this.transform.position;
         }
 
         if (Input.GetKey(KeyCode.S))
@@ -28,6 +31,7 @@ public class PlayerControl : MonoBehaviour
             Vector3 position = this.transform.position;
             position.z -= 0.25f;
             this.transform.position = position;
+            lastPos = this.transform.position;
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -35,24 +39,20 @@ public class PlayerControl : MonoBehaviour
             Vector3 position = this.transform.position;
             position.x -= 0.25f;
             this.transform.position = position;
+            lastPos = this.transform.position;
         }
 
-        if(Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             Vector3 position = this.transform.position;
             position.x += 0.25f;
             this.transform.position = position;
+            lastPos = this.transform.position;
         }
 
-        //  Only here if we ever expand max health to go higher than 1
-        if (player.health == 0)
+        if (!Input.GetKey(KeyCode.D) || !Input.GetKey(KeyCode.A) || !Input.GetKey(KeyCode.S) || !Input.GetKey(KeyCode.W))
         {
-            player.isDead = true;
-        }
-
-        if(player.isDead == true)
-        {
-            // Activate Game Over (UI overlay)
+            this.transform.position = lastPos;
         }
 
 	}
