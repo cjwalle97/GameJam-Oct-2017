@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
-{  
+{
+
 
 
 	void Start ()
     {
-        
+
 	}
 
     void Update ()
     {
-		if (Input.GetKey(KeyCode.W))
+
+        this.transform.position = new Vector3(this.transform.position.x, 1.5f, this.transform.position.z);
+        this.transform.rotation = new Quaternion(0, 0, 0, 0);
+
+        if (Input.GetKey(KeyCode.W))
         {
             Vector3 position = this.transform.position;
             position.z += 0.25f;
