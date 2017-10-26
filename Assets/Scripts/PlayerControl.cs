@@ -6,6 +6,7 @@ public class PlayerControl : MonoBehaviour
 {  
 
     public Player player;
+    public MenuOptions menuInstance;
 
 	void Start ()
     {
@@ -52,7 +53,8 @@ public class PlayerControl : MonoBehaviour
 
         if(player.isDead == true)
         {
-            // Activate Game Over (UI overlay)
+            Destroy(player);
+            menuInstance.PlayerCameraCanvas.SetActive(true);
         }
 
 	}

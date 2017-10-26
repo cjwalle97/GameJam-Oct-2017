@@ -9,39 +9,13 @@ public class MenuOptions : MonoBehaviour
 
     public GameObject MainCamera;
     public GameObject CreditsCamera;
-    public Button StartButton;
-    public Button QuitButton;
-    public Button CreditsButton;
-    public Button MenuButton;
-
+    public GameObject PlayerCameraCanvas;
 
     void Start()
     {
         MainCamera.SetActive(true);
         CreditsCamera.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if(StartButton.enabled)
-        {
-            LoadGame();
-        }
-
-        if(MenuButton.enabled)
-        {
-            MainMenu();
-        }
-
-        if(CreditsButton.enabled)
-        {
-            CreditsMenu();
-        }
-
-        if(QuitButton.enabled)
-        {
-            CloseApplication();
-        }
+        PlayerCameraCanvas.SetActive(false);
     }
 
     public void CreditsMenu()
@@ -56,6 +30,11 @@ public class MenuOptions : MonoBehaviour
         CreditsCamera.SetActive(false);
     }
 
+    public void DisplayGameOver()
+    {
+        PlayerCameraCanvas.SetActive(true);
+    }
+
     public void LoadGame()
     {
         SceneManager.LoadScene(1);
@@ -63,6 +42,7 @@ public class MenuOptions : MonoBehaviour
 
     public void CloseApplication()
     {
+        Debug.Log("User has quit apllication.");
         Application.Quit();
     }
 
