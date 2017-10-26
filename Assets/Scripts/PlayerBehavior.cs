@@ -11,7 +11,7 @@ public class PlayerBehavior : MonoBehaviour
     public int playerHealth;
     public int playerKeys;
     public bool playerIsDead;
-
+    
     void Start ()
     {
         player.health = 1;
@@ -21,13 +21,18 @@ public class PlayerBehavior : MonoBehaviour
 	
 	void Update ()
     {
+
+        playerHealth = player.health;
+        playerKeys = player.keys;
+        playerIsDead = player.isDead;
+
         //  Only here if we ever expand max health to go higher than 1
-        if (playerHealth == 0)
+        if (player.health == 0)
         {
-            playerIsDead = true;
+            player.isDead = true;
         }
 
-        if (playerIsDead == true)
+        if (player.isDead == true)
         {
             menuInstance.PlayerCameraCanvas.SetActive(true);
             Destroy(player);
@@ -38,14 +43,14 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(other.tag == "Key")
         {
-            playerKeys++;
-            Destroy(gameObject);
+            player.keys++;
+            Destroy(other.gameObject);
             Debug.Log("Player touched key");
         }
 
         if (other.tag == "Enemy")
         {
-            playerHealth--;
+            player.health--;
             Debug.Log("Player was hit by enemy.");
         }
     }
