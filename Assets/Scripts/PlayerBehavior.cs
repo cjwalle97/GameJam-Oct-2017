@@ -39,6 +39,7 @@ public class PlayerBehavior : MonoBehaviour
         if(other.tag == "Key")
         {
             playerKeys++;
+            Destroy(gameObject);
             Debug.Log("Player touched key");
         }
 
