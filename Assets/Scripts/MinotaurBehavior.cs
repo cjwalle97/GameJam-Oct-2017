@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class MinotaurBehavior : MonoBehaviour
 {
     public string TargetTag = "Player";
-    public float Speed = 15;
     public Minotaur MinotaurConfig;
     public NavMeshAgent Agent;
 
