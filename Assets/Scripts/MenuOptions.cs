@@ -9,39 +9,12 @@ public class MenuOptions : MonoBehaviour
 
     public GameObject MainCamera;
     public GameObject CreditsCamera;
-    public Button StartButton;
-    public Button QuitButton;
-    public Button CreditsButton;
-    public Button MenuButton;
 
 
     void Start()
     {
         MainCamera.SetActive(true);
         CreditsCamera.SetActive(false);
-    }
-
-    private void Update()
-    {
-        if(StartButton.enabled)
-        {
-            LoadGame();
-        }
-
-        if(MenuButton.enabled)
-        {
-            MainMenu();
-        }
-
-        if(CreditsButton.enabled)
-        {
-            CreditsMenu();
-        }
-
-        if(QuitButton.enabled)
-        {
-            CloseApplication();
-        }
     }
 
     public void CreditsMenu()
@@ -63,6 +36,7 @@ public class MenuOptions : MonoBehaviour
 
     public void CloseApplication()
     {
+        Debug.Log("User has quit apllication.");
         Application.Quit();
     }
 
