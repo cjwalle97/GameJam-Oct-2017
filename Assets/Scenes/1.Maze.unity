@@ -202,8 +202,8 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_Priority: 10
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 1507878773}
+  m_Follow: {fileID: 1507878773}
   m_Lens:
     FieldOfView: 75
     OrthographicSize: 10
@@ -1596,6 +1596,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417066686}
+--- !u!4 &1507878773 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4198257330178264, guid: f8eaa715f657a254b84caa5c82bf4edb,
+    type: 2}
+  m_PrefabInternal: {fileID: 612312965}
 --- !u!1 &1643629942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,7 +1782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 585331576}
-  timer: 1.998153
+  timer: 35.11627
 --- !u!1001 &1770195306
 Prefab:
   m_ObjectHideFlags: 0
