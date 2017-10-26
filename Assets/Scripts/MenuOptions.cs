@@ -9,12 +9,13 @@ public class MenuOptions : MonoBehaviour
 
     public GameObject MainCamera;
     public GameObject CreditsCamera;
-
+    public GameObject PlayerCameraCanvas;
 
     void Start()
     {
         MainCamera.SetActive(true);
         CreditsCamera.SetActive(false);
+        PlayerCameraCanvas.SetActive(false);
     }
 
     public void CreditsMenu()
@@ -27,6 +28,11 @@ public class MenuOptions : MonoBehaviour
     {
         MainCamera.SetActive(true);
         CreditsCamera.SetActive(false);
+    }
+
+    public void DisplayGameOver()
+    {
+        PlayerCameraCanvas.SetActive(true);
     }
 
     public void LoadGame()
