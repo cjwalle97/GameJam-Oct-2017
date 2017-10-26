@@ -10,13 +10,13 @@ public class PlayerBehavior : MonoBehaviour
 
     public int playerHealth;
     public int playerKeys;
-    public bool playerIsDead;
+    //public bool playerIsDead;
     
     void Start ()
     {
         player.health = 1;
         player.keys = 0;
-        player.isDead = false;
+        //player.isDead = false;
     }
 	
 	void Update ()
@@ -24,19 +24,16 @@ public class PlayerBehavior : MonoBehaviour
 
         playerHealth = player.health;
         playerKeys = player.keys;
-        playerIsDead = player.isDead;
+        //playerIsDead = player.isDead;
 
         //  Only here if we ever expand max health to go higher than 1
-        if (player.health == 0)
+        if (player.health <= 0)
         {
-            player.isDead = true;
+            //menuInstance.PlayerCameraCanvas.SetActive(true);
+            Destroy(gameObject);
         }
 
-        if (player.isDead == true)
-        {
-            menuInstance.PlayerCameraCanvas.SetActive(true);
-            Destroy(player);
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
