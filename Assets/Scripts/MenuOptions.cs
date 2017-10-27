@@ -11,11 +11,18 @@ public class MenuOptions : MonoBehaviour
     public GameObject CreditsCamera;
     public GameObject PlayerCameraCanvas;
 
+    private DisplayTimer timerA;
+    private SpawnMinotaur timerB;
+    private DoorBehavior timerC;
+
     void Start()
     {
         MainCamera.SetActive(true);
         CreditsCamera.SetActive(false);
         PlayerCameraCanvas.SetActive(false);
+        timerA.timer = 0;
+        timerB.timer = 0;
+        timerC.timer = 0;
     }
 
     public void CreditsMenu()
@@ -28,6 +35,12 @@ public class MenuOptions : MonoBehaviour
     {
         MainCamera.SetActive(true);
         CreditsCamera.SetActive(false);
+
+    }
+
+    public void SwitchToMenuScene()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void DisplayGameOver()

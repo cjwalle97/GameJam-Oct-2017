@@ -14,6 +14,6 @@ public class MinotaurCamera : MonoBehaviour
 	
 	void Update ()
     {
-        minotaurCamera.transform.position = new Vector3(minotaur.transform.position.x, 3, minotaur.transform.position.z);
+        //minotaurCamera.transform.position = new Vector3(minotaur.transform.position.x, 3, minotaur.transform.position.z);
     }
 }
