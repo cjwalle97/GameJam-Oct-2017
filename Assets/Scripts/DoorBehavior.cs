@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorBehavior : MonoBehaviour
 {
+    public GameObject victoryCanvas;
     public Door DoorConfig;
     public GameObject KeyHolder;
     public Player player;
     public int KeyScore;
+    public Text timeText;
+    public float timer;
 
     public bool isOpen;
     // Use this for initialization
@@ -25,6 +29,7 @@ public class DoorBehavior : MonoBehaviour
         {
             Open();
         }
+        timer = Time.time;
     }
 
     public void Open()
@@ -37,6 +42,9 @@ public class DoorBehavior : MonoBehaviour
     public void Victory()
     {
         //displays the win message
+        KeyHolder.SetActive(false);
+        victoryCanvas.SetActive(true);
+        timeText.text = "Completion Time: " + timer.ToString();
         Debug.Log("Player has won the game!");
     }
 

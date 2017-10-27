@@ -43,22 +43,22 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             Vector3 position = this.transform.position;
-            position.x -= 0.25f;
+            position.x -= 0.30f;
             this.transform.position = position;
             lastPos = this.transform.position;
             lastTurn = new Quaternion(0, 1, 0, -1);
-            playerCam.transform.position -= new Vector3(0.25f, 0, 0);
+            playerCam.transform.position -= new Vector3(0.30f, 0, 0);
 
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             Vector3 position = this.transform.position;
-            position.x += 0.25f;
+            position.x += 0.30f;
             this.transform.position = position;
             lastPos = this.transform.position;
             lastTurn = new Quaternion(0, 1, 0, 1);
-            playerCam.transform.position += new Vector3(0.25f, 0, 0);
+            playerCam.transform.position += new Vector3(0.30f, 0, 0);
 
         }
 
