@@ -19,9 +19,9 @@ public class KeySpawn : MonoBehaviour
 
     void SelectKeys()
     {
-        keyOne = spawnLocationList[Random.Range(0, 4)];
-        keyTwo = spawnLocationList[Random.Range(0, 4)];
-        keyThree = spawnLocationList[Random.Range(0, 4)];
+        keyOne = spawnLocationList[Random.Range(0, 6)];
+        keyTwo = spawnLocationList[Random.Range(0, 6)];
+        keyThree = spawnLocationList[Random.Range(0, 6)];
         if (debug)
         {
             Debug.Log(keyOne.transform.position.ToString());
@@ -31,19 +31,19 @@ public class KeySpawn : MonoBehaviour
 
         while (keyOne == keyTwo || keyOne == keyThree)
         {
-            keyOne = spawnLocationList[Random.Range(0, 4)];
+            keyOne = spawnLocationList[Random.Range(0, 6)];
             Debug.Log(keyOne.transform.position.ToString());
         }
 
         while (keyTwo == keyOne || keyTwo == keyThree)
         {
-            keyTwo = spawnLocationList[Random.Range(0, 4)];
+            keyTwo = spawnLocationList[Random.Range(0, 6)];
             Debug.Log(keyTwo.transform.position.ToString());
         }
 
         while (keyThree == keyOne || keyThree == keyTwo)
         {
-            keyThree = spawnLocationList[Random.Range(0, 4)];
+            keyThree = spawnLocationList[Random.Range(0, 6)];
             Debug.Log(keyThree.transform.position.ToString());
         }
 

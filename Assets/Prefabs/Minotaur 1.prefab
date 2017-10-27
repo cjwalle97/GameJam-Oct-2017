@@ -305,6 +305,7 @@ MonoBehaviour:
   TargetTag: Player
   MinotaurConfig: {fileID: 11400000, guid: 1f7a832ff6c3a2e44afb4f014b3ed42b, type: 2}
   Agent: {fileID: 195584423641006770}
+  WanderPoints: []
 --- !u!124 &124482884944362496
 Behaviour:
   m_ObjectHideFlags: 1
