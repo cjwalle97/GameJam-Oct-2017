@@ -7,5 +7,4 @@ using UnityEngine;
 public class Minotaur : ScriptableObject
 {
     public string TargetTag { get; set; }
-    public float Speed { get; set; }
 }
