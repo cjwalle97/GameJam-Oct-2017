@@ -51,9 +51,6 @@ public class MenuOptions : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene(1);
-        timerA.timer = 0;
-        timerB.timer = 0;
-        timerC.timer = 0;
     }
 
     public void CloseApplication()
