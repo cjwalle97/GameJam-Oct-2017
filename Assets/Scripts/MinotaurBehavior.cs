@@ -27,9 +27,9 @@ public class MinotaurBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, PlayerTarget.position) > 50)
+        if (Vector3.Distance(transform.position, PlayerTarget.position) > 40)
         {
-            if (Vector3.Distance(transform.position, Target.position) < 0.1f)
+            if (Vector3.Distance(transform.position, Target.position) < 1.0f)
             {
                 TargetIndex++;
                 if (TargetIndex >= WanderPoints.Count)
