@@ -6,17 +6,15 @@ public class PlayerBehavior : MonoBehaviour
 {
 
     public Player player;
-    public MenuOptions menuInstance;
-
+    public GameObject failureMenu;
     public int playerHealth;
     public int playerKeys;
-    //public bool playerIsDead;
     
     void Start ()
     {
+        failureMenu.SetActive(false);
         player.health = 1;
         player.keys = 0;
-        //player.isDead = false;
     }
 	
 	void Update ()
@@ -24,12 +22,11 @@ public class PlayerBehavior : MonoBehaviour
 
         playerHealth = player.health;
         playerKeys = player.keys;
-        //playerIsDead = player.isDead;
 
         //  Only here if we ever expand max health to go higher than 1
         if (player.health <= 0)
         {
-            //menuInstance.PlayerCameraCanvas.SetActive(true);
+            failureMenu.SetActive(true);
             Destroy(gameObject);
         }
 

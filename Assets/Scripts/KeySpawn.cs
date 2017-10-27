@@ -11,7 +11,7 @@ public class KeySpawn : MonoBehaviour
     public GameObject keyOne;
     public GameObject keyTwo;
     public GameObject keyThree;
-
+    bool debug = false;
     void Start()
     {
         SelectKeys();
@@ -22,10 +22,12 @@ public class KeySpawn : MonoBehaviour
         keyOne = spawnLocationList[Random.Range(0, 4)];
         keyTwo = spawnLocationList[Random.Range(0, 4)];
         keyThree = spawnLocationList[Random.Range(0, 4)];
-        Debug.Log(keyOne.transform.position.ToString());
-        Debug.Log(keyTwo.transform.position.ToString());
-        Debug.Log(keyThree.transform.position.ToString());
-
+        if (debug)
+        {
+            Debug.Log(keyOne.transform.position.ToString());
+            Debug.Log(keyTwo.transform.position.ToString());
+            Debug.Log(keyThree.transform.position.ToString());
+        }
 
         while (keyOne == keyTwo || keyOne == keyThree)
         {

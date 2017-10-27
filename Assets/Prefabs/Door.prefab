@@ -108,7 +108,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 10}
+  m_Size: {x: 1, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: -5}
 --- !u!114 &114764614320287880
 MonoBehaviour:
@@ -121,8 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21fd04ab1807a24d8cbbf3c9412bc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victoryCanvas: {fileID: 0}
   DoorConfig: {fileID: 11400000, guid: dd837845aae512f42bb6917c391d3e1a, type: 2}
   KeyHolder: {fileID: 0}
   player: {fileID: 11400000, guid: b37fbc681c6aca140a623fd46a305c50, type: 2}
   KeyScore: 0
+  timeText: {fileID: 0}
+  timer: 0
   isOpen: 0
