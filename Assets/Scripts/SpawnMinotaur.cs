@@ -28,5 +28,17 @@ public class SpawnMinotaur : MonoBehaviour
             Instantiate(minotaur, enemySpawn.transform.position, enemySpawn.transform.rotation);
             enemiesCreated++;
         }
+
+        if (timer >= 60.0f && timer <= 61.0f && enemiesCreated != 2)
+        {
+            Instantiate(minotaur, enemySpawn.transform.position, enemySpawn.transform.rotation);
+            enemiesCreated++;
+        }
+
+        if (timer >= 90.0f && timer <= 91.0f && enemiesCreated != 2)
+        {
+            Instantiate(minotaur, enemySpawn.transform.position, enemySpawn.transform.rotation);
+            enemiesCreated++;
+        }
     }
 }
