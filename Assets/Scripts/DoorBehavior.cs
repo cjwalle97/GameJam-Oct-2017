@@ -25,7 +25,7 @@ public class DoorBehavior : MonoBehaviour
     void Update()
     {
         KeyScore = player.keys;
-        if (KeyScore == DoorConfig.KeysNeeded)
+        if (isOpen == false)
         {
             Open();
         }
@@ -34,9 +34,12 @@ public class DoorBehavior : MonoBehaviour
 
     public void Open()
     {
-        //Open Animation goes here
-        Debug.Log("Player has enough Keys to win.");
-        isOpen = true;
+        if (KeyScore == DoorConfig.KeysNeeded)
+        {
+            //Open Animation goes here
+            Debug.Log("Player has enough Keys to win.");
+            isOpen = true;
+        }
     }
 
     public void Victory()
